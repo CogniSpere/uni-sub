@@ -1,0 +1,61 @@
+name field same as plugin.json
+
+
+export default {
+  name: "gamification-axis",   // optional but helpful
+
+  init(ctx) {
+    console.log("[Gamification] init", ctx);
+  },
+
+  onSignal(type, payload, ctx) {
+    console.log("[Gamification] signal:", type, payload);
+  },
+
+  onStateChanged(state) {
+    console.log("[Gamification] state changed:", state);
+  }
+};
+
+
+
+⭐ 3. Module syntax — the uniform template
+Every module should follow this shape:
+
+js
+// modules/gamification.js
+export default {
+  name: "gamification-axis",
+
+  init(ctx) {
+    console.log("[Gamification] init", ctx);
+  },
+
+  onSignal(type, payload, ctx) {
+    console.log("[Gamification] signal:", type, payload);
+  },
+
+  onStateChanged(state) {
+    console.log("[Gamification] state changed:", state);
+  }
+};
+And for privacy:
+
+js
+// modules/privacy.js
+export default {
+  name: "privacy-axis",
+
+  init(ctx) {
+    console.log("[Privacy] init", ctx);
+  },
+
+  onSignal(type, payload, ctx) {
+    console.log("[Privacy] signal:", type, payload);
+  }
+};
+✔ export default { … } is required
+✔ init() is required
+✔ onSignal() and onStateChanged() are optional
+✔ naming should match plugins.json
+This keeps your ecosystem consistent.

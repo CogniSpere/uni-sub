@@ -1,20 +1,29 @@
 {
   "manifest_version": 3,
-  "name": "WCO Substrate Host",
+  "name": "WCO v2 Substrate",
   "version": "0.3.0",
-  "description": "Minimal orchestrator for loading WCO substrate modules",
-  "permissions": ["storage", "tabs"],
+  "permissions": ["storage"],
   "host_permissions": ["<all_urls>"],
   "background": {
     "service_worker": "background.js",
     "type": "module"
   },
-  "content_scripts": [
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "web_accessible_resources": [
     {
-      "matches": ["<all_urls>"],
-      "js": ["content.js"],
-      "run_at": "document_idle"
+      "resources": [
+        "substrate.html",
+        "substrate.js",
+        "substrate-glue.js",
+        "registry.js",
+        "schema-loader.js",
+        "dna.json",
+        "plugins.json",
+        "modules/*.js"
+      ],
+      "matches": ["<all_urls>"]
     }
-  ],
-  "action": {}
+  ]
 }
