@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "WCO v2 Substrate",
+  "version": "0.3.0",
+  "description": "World Citizens Organization - Modular Civic Substrate",
+  "permissions": ["storage"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "WCO v2"
+  },
+  "icons": {
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}

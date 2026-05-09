@@ -1,8 +1,12 @@
 {
   "modules": [
     {
-      "name": "gamification",
+      "name": "gamification-axis",
       "file": "modules/gamification.js"
+    },
+    {
+      "name": "privacy-axis",
+      "file": "modules/privacy.js"
     }
   ]
 }
